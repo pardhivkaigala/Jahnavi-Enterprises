@@ -1,1 +1,3 @@
 # Jahnavi-Enterprises
+
+Jahnavi Enterprises is a trusted supplier and distributor of high-quality raw bran and cattle feed products, dedicated to supporting the agricultural and livestock sectors. We provide nutritious and cost-effective feed solutions that help farmers improve cattle health, milk production, and overall livestock performance. Our commitment to quality, reliability, and customer satisfaction has made us a dependable partner for dairy farms, cattle owners, and feed retailers. At Jahnavi Enterprises, we focus on delivering fresh, nutrient-rich products with timely service and competitive pricing.
