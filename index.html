@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jahnavi Enterprises | Raw Bran & Cattle Feed Products</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Poppins', sans-serif; }
+  html { scroll-behavior: smooth; }
+
+  .hero-bg {
+    background:
+      linear-gradient(rgba(20, 35, 15, 0.72), rgba(30, 50, 20, 0.78)),
+      url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  }
+
+  .bran-bg {
+    background:
+      linear-gradient(rgba(255, 251, 240, 0.93), rgba(255, 248, 230, 0.95)),
+      url('https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1600&q=80') center/cover fixed no-repeat;
+  }
+
+  .contact-bg {
+    background:
+      linear-gradient(rgba(25, 45, 18, 0.88), rgba(35, 60, 25, 0.9)),
+      url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
+  .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+
+  .pulse-ring {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34,197,94,.5); }
+    70% { box-shadow: 0 0 0 16px rgba(34,197,94,0); }
+    100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+  }
+
+  @keyframes floaty {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .floaty { animation: floaty 4s ease-in-out infinite; }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #facc15, #fb923c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-blur { backdrop-filter: blur(12px); background: rgba(20,35,15,.85); }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #f1f1ea; }
+  ::-webkit-scrollbar-thumb { background: #4d7c0f; border-radius: 8px; }
+</style>
+</head>
+<body class="bg-amber-50 text-gray-800">
+
+<!-- ============ NAVBAR ============ -->
+<nav id="navbar" class="fixed top-0 inset-x-0 z-50 nav-blur shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="#home" class="flex items-center gap-2">
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-xl md:text-2xl shadow-md">🌾</div>
+      <div class="leading-tight">
+        <span class="block text-white font-bold text-lg md:text-xl tracking-wide">Jahnavi <span class="gradient-text">Enterprises</span></span>
+        <span class="hidden sm:block text-green-200 text-[10px] md:text-xs">Raw Bran & Cattle Feed Products</span>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-green-100 font-medium">
+      <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+      <a href="#about" class="hover:text-yellow-400 transition">About</a>
+      <a href="#products" class="hover:text-yellow-400 transition">Products</a>
+      <a href="#why" class="hover:text-yellow-400 transition">Why Us</a>
+      <a href="#contact" class="px-5 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-green-950 font-semibold hover:scale-105 transition shadow">Contact</a>
+    </div>
+    <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-green-950/95 text-green-100 text-center divide-y divide-green-800">
+    <a href="#home" class="block py-3 hover:bg-green-800">Home</a>
+    <a href="#about" class="block py-3 hover:bg-green-800">About</a>
+    <a href="#products" class="block py-3 hover:bg-green-800">Products</a>
+    <a href="#why" class="block py-3 hover:bg-green-800">Why Us</a>
+    <a href="#contact" class="block py-3 hover:bg-green-800 text-yellow-400 font-semibold">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="home" class="hero-bg min-h-screen flex items-center pt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 grid md:grid-cols-2 gap-10 items-center w-full">
+    <div class="fade-up visible">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-yellow-400/20 border border-yellow-400/40 text-yellow-300 text-sm font-medium mb-5">🐃 Trusted Cattle Feed Suppliers</span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+        Premium <span class="gradient-text">Raw Bran</span> &amp;<br class="hidden sm:block"> Cattle Feed Products
+      </h1>
+      <p class="mt-6 text-green-100 text-base sm:text-lg max-w-xl">
+        Jahnavi Enterprises supplies high-quality rice bran, raw bran and nutritious cattle feed to dairy farms, traders and farmers — ensuring healthier cattle and higher milk yield.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#products" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-green-950 font-bold shadow-xl hover:scale-105 transition">Explore Products</a>
+        <a href="tel:9949955119" class="px-7 py-3.5 rounded-full border-2 border-green-300/60 text-white font-semibold hover:bg-white/10 transition flex items-center gap-2">
+          📞 Call Now
+        </a>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-8">
+        <div><p class="text-3xl font-extrabold text-yellow-400" data-count="500">0</p><p class="text-green-200 text-sm">Happy Farmers</p></div>
+        <div><p class="text-3xl font-extrabold text-yellow-400" data-count="15">0</p><p class="text-green-200 text-sm">Years Experience</p></div>
+        <div><p class="text-3xl font-extrabold text-yellow-400" data-count="1000">0</p><p class="text-green-200 text-sm">Tons Supplied / Yr</p></div>
+      </div>
+    </div>
+    <div class="hidden md:flex justify-center fade-up visible">
+      <div class="relative floaty">
+        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=700&q=80"
+             alt="Buffalo" class="rounded-3xl shadow-2xl border-4 border-yellow-400/40 w-[420px] h-[480px] object-cover"
+             onerror="this.style.display='none'">
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl px-5 py-4 flex items-center gap-3">
+          <span class="text-3xl">🌾</span>
+          <div>
+            <p class="font-bold text-green-900">100% Natural</p>
+            <p class="text-xs text-gray-500">Pure Rice Bran Quality</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="bran-bg py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="fade-up grid grid-cols-2 gap-4">
+      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=500&q=80" alt="Rice bran" class="rounded-2xl shadow-lg h-52 sm:h-64 w-full object-cover card-hover">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=500&q=80" alt="Cattle grazing" class="rounded-2xl shadow-lg h-52 sm:h-64 w-full object-cover mt-8 card-hover">
+      <img src="https://images.unsplash.com/photo-1551649001-7a2482d98d05?auto=format&fit=crop&w=500&q=80" alt="Grains" class="rounded-2xl shadow-lg h-52 sm:h-64 w-full object-cover card-hover">
+      <img src="https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?auto=format&fit=crop&w=500&q=80" alt="Buffalo in field" class="rounded-2xl shadow-lg h-52 sm:h-64 w-full object-cover mt-8 card-hover">
+    </div>
+    <div class="fade-up">
+      <span class="text-orange-600 font-semibold tracking-widest uppercase text-sm">About Us</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-green-900 mt-2">Nourishing Cattle, <span class="text-orange-500">Empowering Farmers</span></h2>
+      <p class="mt-5 text-gray-700 leading-relaxed">
+        Jahnavi Enterprises is a leading supplier of <strong>raw bran, rice bran and cattle feed products</strong>. We source directly from premium rice mills to guarantee freshness, purity and consistent nutritional value in every batch.
+      </p>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Our products are trusted by dairy farms and cattle owners for improving milk production, animal health and overall livestock performance.
+      </p>
+      <ul class="mt-6 space-y-3">
+        <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm">✓</span> Direct sourcing from quality rice mills</li>
+        <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm">✓</span> Bulk supply & wholesale rates</li>
+        <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm">✓</span> Timely delivery across regions</li>
+        <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm">✓</span> Lab-tested nutritional quality</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products" class="py-20 md:py-28 bg-gradient-to-b from-amber-50 to-orange-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 fade-up">
+      <span class="text-orange-600 font-semibold tracking-widest uppercase text-sm">Our Products</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-green-900 mt-2">Quality Feed for Healthy Cattle</h2>
+      <p class="mt-3 text-gray-600 max-w-2xl mx-auto">A complete range of bran and feed products, available in bulk and retail quantities.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Raw Rice Bran" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🌾</span><h3 class="text-xl font-bold text-green-900">Raw Rice Bran</h3></div>
+          <p class="text-gray-600 text-sm">Fresh, oil-rich raw bran directly from rice mills. High energy content ideal for dairy cattle and buffaloes.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551649001-7a2482d98d05?auto=format&fit=crop&w=600&q=80" alt="De-oiled Bran" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🥣</span><h3 class="text-xl font-bold text-green-900">De-Oiled Rice Bran</h3></div>
+          <p class="text-gray-600 text-sm">Protein-rich de-oiled bran (DORB) — an economical, fibre-rich feed component for cattle and poultry.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80" alt="Cattle Feed" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🐃</span><h3 class="text-xl font-bold text-green-900">Compound Cattle Feed</h3></div>
+          <p class="text-gray-600 text-sm">Balanced feed mixtures formulated to boost milk yield and maintain excellent cattle health.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=600&q=80" alt="Wheat Bran" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🌿</span><h3 class="text-xl font-bold text-green-900">Wheat Bran</h3></div>
+          <p class="text-gray-600 text-sm">Fibre-rich wheat bran that aids digestion and supplements cattle diet with essential nutrients.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?auto=format&fit=crop&w=600&q=80" alt="Buffalo Feed" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🥛</span><h3 class="text-xl font-bold text-green-900">Buffalo Special Feed</h3></div>
+          <p class="text-gray-600 text-sm">Specially blended feed for buffaloes to enhance fat content in milk and overall body condition.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover fade-up">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1599321329467-bfa6da55ad27?auto=format&fit=crop&w=600&q=80" alt="Broken Rice" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🍚</span><h3 class="text-xl font-bold text-green-900">Broken Rice & Husk</h3></div>
+          <p class="text-gray-600 text-sm">Broken rice and rice husk supplied in bulk — an affordable energy source for livestock feed mixing.</p>
+          <a href="#contact" class="inline-block mt-4 text-orange-600 font-semibold hover:underline">Enquire Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why" class="hero-bg py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+    <span class="text-yellow-400 font-semibold tracking-widest uppercase text-sm fade-up">Why Choose Us</span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 fade-up">The Jahnavi Promise</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-7 border border-white/20 card-hover fade-up">
+        <div class="text-4xl mb-3">✅</div>
+        <h3 class="text-white font-bold text-lg">Assured Quality</h3>
+        <p class="text-green-100 text-sm mt-2">Every batch checked for freshness, moisture and nutrition standards.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-7 border border-white/20 card-hover fade-up">
+        <div class="text-4xl mb-3">🚚</div>
+        <h3 class="text-white font-bold text-lg">On-Time Delivery</h3>
+        <p class="text-green-100 text-sm mt-2">Reliable logistics network for bulk orders, delivered when you need them.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-7 border border-white/20 card-hover fade-up">
+        <div class="text-4xl mb-3">💰</div>
+        <h3 class="text-white font-bold text-lg">Best Wholesale Rates</h3>
+        <p class="text-green-100 text-sm mt-2">Competitive pricing with direct-from-mill sourcing, no middlemen.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-7 border border-white/20 card-hover fade-up">
+        <div class="text-4xl mb-3">🤝</div>
+        <h3 class="text-white font-bold text-lg">Farmer-First Service</h3>
+        <p class="text-green-100 text-sm mt-2">Personal guidance on feed selection for better cattle health & yield.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact-bg py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 fade-up">
+      <span class="text-yellow-400 font-semibold tracking-widest uppercase text-sm">Get In Touch</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Contact Jahnavi Enterprises</h2>
+      <p class="text-green-100 mt-3 max-w-xl mx-auto">Call us for bulk orders, wholesale pricing or product enquiries. We're happy to help!</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <a href="tel:9949955119" class="bg-white rounded-3xl p-8 flex items-center gap-5 shadow-2xl card-hover fade-up">
+        <div class="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center text-3xl pulse-ring shrink-0">📞</div>
+        <div>
+          <p class="text-sm text-gray-500 font-medium">Call / WhatsApp</p>
+          <p class="text-2xl font-extrabold text-green-900 tracking-wide">99499 55119</p>
+          <p class="text-xs text-orange-600 font-semibold mt-1">Tap to Call →</p>
+        </div>
+      </a>
+      <a href="tel:8466067788" class="bg-white rounded-3xl p-8 flex items-center gap-5 shadow-2xl card-hover fade-up">
+        <div class="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center text-3xl pulse-ring shrink-0">📱</div>
+        <div>
+          <p class="text-sm text-gray-500 font-medium">Call / WhatsApp</p>
+          <p class="text-2xl font-extrabold text-green-900 tracking-wide">84660 67788</p>
+          <p class="text-xs text-orange-600 font-semibold mt-1">Tap to Call →</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Enquiry Form -->
+    <div class="bg-white/95 rounded-3xl shadow-2xl p-8 md:p-10 max-w-3xl mx-auto mt-10 fade-up">
+      <h3 class="text-xl font-bold text-green-900 mb-6 text-center">Send an Enquiry</h3>
+      <form id="enquiryForm" class="grid sm:grid-cols-2 gap-5">
+        <input type="text" required placeholder="Your Name" class="px-5 py-3.5 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition w-full">
+        <input type="tel" required placeholder="Phone Number" pattern="[0-9]{10}" class="px-5 py-3.5 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition w-full">
+        <select required class="px-5 py-3.5 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition w-full sm:col-span-2 text-gray-600">
+          <option value="">Select Product</option>
+          <option>Raw Rice Bran</option>
+          <option>De-Oiled Rice Bran</option>
+          <option>Compound Cattle Feed</option>
+          <option>Wheat Bran</option>
+          <option>Buffalo Special Feed</option>
+          <option>Broken Rice & Husk</option>
+        </select>
+        <textarea rows="3" placeholder="Your message / quantity required..." class="px-5 py-3.5 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition w-full sm:col-span-2 resize-none"></textarea>
+        <button type="submit" class="sm:col-span-2 py-4 rounded-xl bg-gradient-to-r from-green-700 to-green-600 text-white font-bold text-lg hover:from-green-800 hover:to-green-700 hover:scale-[1.01] transition shadow-lg">
+          Submit Enquiry 🌾
+        </button>
+      </form>
+      <p id="formMsg" class="hidden text-center text-green-700 font-semibold mt-4">✅ Thank you! We will contact you shortly. For instant response, call 99499 55119.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-green-950 text-green-200 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8 items-start">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-xl">🌾</div>
+        <span class="text-white font-bold text-lg">Jahnavi Enterprises</span>
+      </div>
+      <p class="text-sm text-green-300">Premium suppliers of raw bran, rice bran and cattle feed products — serving farmers with quality and trust.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#home" class="hover:text-yellow-400 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400 transition">About Us</a></li>
+        <li><a href="#products" class="hover:text-yellow-400 transition">Products</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-3">Contact Us</h4>
+      <p class="text-sm flex items-center gap-2 mb-2">📞 <a href="tel:9949955119" class="hover:text-yellow-400">99499 55119</a></p>
+      <p class="text-sm flex items-center gap-2 mb-2">📱 <a href="tel:8466067788" class="hover:text-yellow-400">84660 67788</a></p>
+      <p class="text-sm flex items-center gap-2">🕒 Open: Mon–Sat, 8 AM – 8 PM</p>
+    </div>
+  </div>
+  <div class="border-t border-green-800 mt-8 pt-6 text-center text-xs text-green-400">
+    © <span id="year"></span> Jahnavi Enterprises. All Rights Reserved. | Raw Bran & Cattle Feed Products
+  </div>
+</footer>
+
+<!-- Floating Call Button -->
+<a href="tel:9949955119" class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-700 text-white flex items-center justify-center text-3xl shadow-2xl pulse-ring hover:scale-110 transition" title="Call 9949955119">📞</a>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Counters
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.dataset.count;
+      let cur = 0;
+      const step = Math.max(1, Math.ceil(target / 60));
+      const timer = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(timer); el.textContent = target + '+'; }
+        else el.textContent = cur;
+      }, 25);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+  // Form
+  document.getElementById('enquiryForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('formMsg').classList.remove('hidden');
+    e.target.reset();
+    setTimeout(() => document.getElementById('formMsg').classList.add('hidden'), 6000);
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
